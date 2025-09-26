@@ -1,4 +1,4 @@
-# HR-Analytics-SQL-Queries
+# HR Analytics SQL Queries
 
 This repository showcases my ability to use SQL to solve common business problems in the field of People Analytics. The queries are structured from beginner to advanced to demonstrate a progression of skills, using a mock HR dataset.
 
