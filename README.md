@@ -10,8 +10,6 @@ This repository showcases my ability to use SQL to solve common business problem
 * **Data Manipulation** (`JOIN`s, `WHERE`, `ORDER BY`, `LIMIT`)
 * **Common Table Expressions** (CTEs)
 * **Window Functions** (`RANK()`, `NTILE()`, `PARTITION BY`)
-* **Query Optimization** (`WHERE` vs. `HAVING`)
-
 ---
 
 ## Beginner Queries
