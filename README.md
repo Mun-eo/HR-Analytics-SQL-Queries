@@ -14,7 +14,7 @@ This repository showcases my ability to use SQL to solve common business problem
 
 # Phase 1: Understanding Compensation Demographics and Disparity
 
-Synthetix Solutions wants a foundational understanding of who their employees are and what they're paid to uncover the companies basic structure and where compensation disparities might lie to set a benchmark for further analysis.
+Synthetix Solutions wants a foundational understanding of who their employees are and what they're paid. This will uncover the companies basic structure and where compensation disparities might lie among the employees which will allow Synthetix Solutions to set a benchmark for further analysis.
 
 
 ### Problem 1: What's the highest salary within the company?
@@ -28,24 +28,13 @@ SELECT
 FROM
 	hr_employee_info
 ```
-### Problem 2: Are there salary differences between employees who work over time versus those who do not?
+**Result:**
+![Description of the Data] 
+<img width="376" height="326" alt="Screenshot 2025-09-27 at 1 18 11 PM" src="https://github.com/user-attachments/assets/93cf32c4-597c-4539-88c4-81dba35cff92" />
 
-Calculate the average Salary for employees who work Overtime versus those who do not.
 
-**Query:**
-```sql
-SELECT
-	per.overtime,
-	AVG(emp.salary) AS avg_salary
-FROM
-	hr_employee_info emp
-INNER JOIN 
-	hr_performance per on emp.employeeid = per.employeeid
-GROUP BY 
-	per.overtime
-```
 
-### Problem 3: Who are the highest paid employees within the company?
+### Problem 2: Who are the highest paid employees within the company?
 
 List the top 5 highest-paid employees in the entire company, including their Job_Role and Department.
 
@@ -63,6 +52,22 @@ ORDER BY
 	salary DESC
 LIMIT 5
 ```
+### Problem 3: Are there salary differences between employees who work over time versus those who do not?
+
+Calculate the average Salary for employees who work Overtime versus those who do not.
+
+**Query:**
+```sql
+SELECT
+	per.overtime,
+	AVG(emp.salary) AS avg_salary
+FROM
+	hr_employee_info emp
+INNER JOIN 
+	hr_performance per on emp.employeeid = per.employeeid
+GROUP BY 
+	per.overtime
+```
 ### Problem 4: What employees have a salary greater than the company avergae salary?
 
 Find all employees who have a Salary that is above the company-wide average Salary.
@@ -70,14 +75,12 @@ Find all employees who have a Salary that is above the company-wide average Sala
 **Query:**
 ```sql
 SELECT
-	emp.employeeid,
-	emp.salary
+	employeeid,
+	salary
 FROM
-	hr_employee_info emp
-INNER JOIN 
-	hr_performance per ON emp.employeeid = per.employeeid 
-WHERE
-	emp.salary > 126511.020408163265												
+	hr_employee_info 
+WHERE 
+	salary > (SELECT AVG(salary) FROM hr_employee_info)											
 ;
 ```
 ---
