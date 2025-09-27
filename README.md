@@ -12,7 +12,7 @@ This repository showcases my ability to use SQL to solve common business problem
 * **Window Functions** (`RANK()`, `NTILE()`, `PARTITION BY`)
 ---
 
-# Phase 1: Initial Workforce Assessment: Understanding Compensation Demographics and Disparity
+# Phase 1: Understanding Compensation Demographics and Disparity
 
 Synthetix Solutions wants a foundational understanding of who their employees are and what they're paid to uncover the companies basic structure and where compensation disparities might lie to set a benchmark for further analysis.
 
