@@ -12,7 +12,10 @@ This repository showcases my ability to use SQL to solve common business problem
 * **Window Functions** (`RANK()`, `NTILE()`, `PARTITION BY`)
 ---
 
-These queries demonstrate a solid understanding of fundamental SQL concepts, including basic filtering and aggregation.
+# Phase 1: Initial Workforce Assessment: Understanding Compensation Demographics and Disparity
+
+Synthetix Solutions wants a foundational understanding of who their employees are and what they're paid to uncover the companies basic structure and where compensation disparities might lie to set a benchmark for further analysis.
+
 
 ### Problem 1: What's the highest salary within the company?
 
@@ -41,7 +44,26 @@ INNER JOIN
 GROUP BY 
 	per.overtime
 ```
-### Problem 3: What employees have a salary greater than the company avergae salary?
+
+### Problem 3: Who are the highest paid employees within the company?
+
+List the top 5 highest-paid employees in the entire company, including their Job_Role and Department.
+
+**Query:**
+ ```sql
+SELECT
+	employeeid,
+	job_role,
+	department,
+	salary,
+	RANK () OVER(ORDER BY salary DESC) AS dept_rank
+FROM
+	hr_employee_info
+ORDER BY 
+	salary DESC
+LIMIT 5
+```
+### Problem 4: What employees have a salary greater than the company avergae salary?
 
 Find all employees who have a Salary that is above the company-wide average Salary.
 
@@ -57,10 +79,13 @@ INNER JOIN
 WHERE
 	emp.salary > 126511.020408163265												
 ;
-
 ```
+---
+# Phase 2: Analyzing Salary Equity and Identifying Top Talent
 
-### Problem 4: What job_role has the highest average Salary for employees who have been with the company for less than 2 year?
+This phase uses more complex functions to evaluate if the compensation structure is fair and where the high-value employees are clustered.
+
+### Problem 5: What job_role has the highest average Salary for employees who have been with the company for less than 2 year?
 
 Find the Job_Role that has the highest average Salary for employees who have been with the company for less than 2 year
 
@@ -84,7 +109,7 @@ ORDER BY
 LIMIT 1
 ```
 
-### Problem 5: Who are the highest paid employees within the company?
+### Problem 6: Who are the highest paid employees within the company?
 
 List the top 5 highest-paid employees in the entire company, including their Job_Role and Department.
 
@@ -103,7 +128,7 @@ ORDER BY
 LIMIT 5
 ```
 
-### Problem 6: Who are the 5 highest paid employess from each department?
+### Problem 7: Who are the 5 highest paid employess from each department?
 
 Identify the top 5 highest-paid employees within each Department based on Salary.
 
@@ -130,7 +155,7 @@ ORDER BY
 ;
 ```
 
-### Problem 7: What percentage of employees salary make up each department total salary?
+### Problem 8: What percentage of employees salary make up each department total salary?
 
 Calculate the Salary of all employees as a percentage of their Department's total Salary expenditure
 
@@ -158,7 +183,7 @@ INNER JOIN
 	hr_employee_info emp ON ds.department = emp.department
 ```
 
-### Problem 8: Which employees earn 10% more than the average salary of their job role?
+### Problem 9: Which employees earn 10% more than the average salary of their job role?
 
 Identify all employees whose Salary is in the top 10% of their specific Job_Role.
 
