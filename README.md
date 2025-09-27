@@ -28,9 +28,16 @@ SELECT
 FROM
 	hr_employee_info
 ```
+<p align="center">
 **Result:**
-![Description of the Data] 
-<img width="376" height="326" alt="Screenshot 2025-09-27 at 1 18 11 PM" src="https://github.com/user-attachments/assets/93cf32c4-597c-4539-88c4-81dba35cff92" />
+
+<p align="center">
+Returns $192,000 being the highest salary earned within Synthetix Solutions
+	
+<p align="center">
+<img width="115" height="67" alt="Screenshot 2025-09-27 at 2 15 34 PM" src="https://github.com/user-attachments/assets/5cb2a8fc-f9b0-42a9-b3cf-d8eea6036a65" />
+
+
 
 
 
@@ -52,7 +59,17 @@ ORDER BY
 	salary DESC
 LIMIT 5
 ```
-### Problem 3: Are there salary differences between employees who work over time versus those who do not?
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns the 5 highest paid employees within Synthetix Solutions
+	
+<p align="center">
+<img width="609" height="169" alt="Screenshot 2025-09-27 at 2 09 47 PM" src="https://github.com/user-attachments/assets/0e47e61b-56e4-4da1-9380-97af77e1454a" />
+
+	
+### Problem 3: Are there salary differences between employees who work overtime versus those who do not?
 
 Calculate the average Salary for employees who work Overtime versus those who do not.
 
@@ -68,7 +85,15 @@ INNER JOIN
 GROUP BY 
 	per.overtime
 ```
-### Problem 4: What employees have a salary greater than the company avergae salary?
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns the average salary of employees who work overtime and employees who do not work over time 
+	
+<p align="center">
+<img width="335" height="92" alt="Screenshot 2025-09-27 at 2 07 33 PM" src="https://github.com/user-attachments/assets/45683fc1-7de9-46fd-807c-5aa5f6de1a34" />
+
 
 Find all employees who have a Salary that is above the company-wide average Salary.
 
@@ -110,25 +135,6 @@ GROUP BY
 ORDER BY 
 	avg_salary DESC
 LIMIT 1
-```
-
-### Problem 6: Who are the highest paid employees within the company?
-
-List the top 5 highest-paid employees in the entire company, including their Job_Role and Department.
-
-**Query:**
- ```sql
-SELECT
-	employeeid,
-	job_role,
-	department,
-	salary,
-	RANK () OVER(ORDER BY salary DESC) AS dept_rank
-FROM
-	hr_employee_info
-ORDER BY 
-	salary DESC
-LIMIT 5
 ```
 
 ### Problem 7: Who are the 5 highest paid employess from each department?
