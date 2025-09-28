@@ -8,7 +8,7 @@ This repository showcases my ability to use SQL to solve common business problem
 
 * **Data Aggregation** (using `GROUP BY`, `SUM()`, `AVG()`)
 * **Data Manipulation** (`JOIN`s, `WHERE`, `ORDER BY`, `LIMIT`)
-* **Common Table Expressions** (CTEs)
+* **Common Table Expressions** (`CTEs`)
 * **Window Functions** (`RANK()`, `NTILE()`, `PARTITION BY`)
 ---
 
@@ -105,9 +105,20 @@ SELECT
 FROM
 	hr_employee_info 
 WHERE 
-	salary > (SELECT AVG(salary) FROM hr_employee_info)											
+	salary > (SELECT AVG(salary) FROM hr_employee_info)									
 ;
 ```
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns $192,000 being the highest salary earned within Synthetix Solutions
+	
+<p align="center">
+<img width="115" height="67" alt="Screenshot 2025-09-27 at 2 15 34 PM" src="https://github.com/user-attachments/assets/5cb2a8fc-f9b0-42a9-b3cf-d8eea6036a65" />
+
+
+
 ---
 # Phase 2: Analyzing Salary Equity and Identifying Top Talent
 
