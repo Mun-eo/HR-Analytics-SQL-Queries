@@ -94,6 +94,7 @@ Returns the average salary of employees who work overtime and employees who do n
 <p align="center">
 <img width="335" height="92" alt="Screenshot 2025-09-27 at 2 07 33 PM" src="https://github.com/user-attachments/assets/45683fc1-7de9-46fd-807c-5aa5f6de1a34" />
 
+### Problem 4: Who are the employees who earn higher than the company average?
 
 Find all employees who have a Salary that is above the company-wide average Salary.
 
@@ -112,11 +113,10 @@ WHERE
 **Result:**
 
 <p align="center">
-Returns $192,000 being the highest salary earned within Synthetix Solutions
+Returns all employees who earn higher than the average salary within Synthetix Solutions
 	
 <p align="center">
-<img width="115" height="67" alt="Screenshot 2025-09-27 at 2 15 34 PM" src="https://github.com/user-attachments/assets/5cb2a8fc-f9b0-42a9-b3cf-d8eea6036a65" />
-
+<img width="416" height="828" alt="image" src="https://github.com/user-attachments/assets/9dbb350a-15d4-4b82-92fc-8b76fec1e5cd" />
 
 
 ---
