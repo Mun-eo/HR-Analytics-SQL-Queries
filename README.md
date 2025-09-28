@@ -17,6 +17,8 @@ This repository showcases my ability to use SQL to solve common business problem
 Synthetix Solutions wants a foundational understanding of who their employees are and what they're paid. This will uncover the companies basic structure and where compensation disparities might lie among the employees which will allow Synthetix Solutions to set a benchmark for further analysis.
 
 
+
+
 ### Problem 1: What's the highest salary within the company?
 
 Find the highest Salary in the company?
@@ -36,8 +38,6 @@ Returns $192,000 being the highest salary earned within Synthetix Solutions
 	
 <p align="center">
 <img width="115" height="67" alt="Screenshot 2025-09-27 at 2 15 34 PM" src="https://github.com/user-attachments/assets/5cb2a8fc-f9b0-42a9-b3cf-d8eea6036a65" />
-
-
 
 
 
@@ -68,6 +68,8 @@ Returns the 5 highest paid employees within Synthetix Solutions
 <p align="center">
 <img width="609" height="169" alt="Screenshot 2025-09-27 at 2 09 47 PM" src="https://github.com/user-attachments/assets/0e47e61b-56e4-4da1-9380-97af77e1454a" />
 
+
+
 	
 ### Problem 3: Are there salary differences between employees who work overtime versus those who do not?
 
@@ -94,6 +96,9 @@ Returns the average salary of employees who work overtime and employees who do n
 <p align="center">
 <img width="335" height="92" alt="Screenshot 2025-09-27 at 2 07 33 PM" src="https://github.com/user-attachments/assets/45683fc1-7de9-46fd-807c-5aa5f6de1a34" />
 
+
+
+
 ### Problem 4: Who are the employees who earn higher than the company average?
 
 Find all employees who have a Salary that is above the company-wide average Salary.
@@ -119,14 +124,18 @@ Returns all employees who earn higher than the average salary within Synthetix S
 <img width="416" height="828" alt="image" src="https://github.com/user-attachments/assets/9dbb350a-15d4-4b82-92fc-8b76fec1e5cd" />
 
 
+
 ---
 # Phase 2: Analyzing Salary Equity and Identifying Top Talent
 
-This phase uses more complex functions to evaluate if the compensation structure is fair and where the high-value employees are clustered.
+This phase uses more complex functions to evaluate if the compensation structure within Synthetix Solutions is fair and the departments high-value employees are clustered.
 
-### Problem 5: What job_role has the highest average Salary for employees who have been with the company for less than 2 year?
 
-Find the Job_Role that has the highest average Salary for employees who have been with the company for less than 2 year
+
+
+### Problem 5: Which job role has the highest average Salary for employees who have been with the company for less than 2 year?
+
+Find the Job Role that has the highest average Salary for employees who have been with the company for less than 2 year
 
 **Query:**
  ```sql
@@ -147,6 +156,16 @@ ORDER BY
 	avg_salary DESC
 LIMIT 1
 ```
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns the job role manager as the job role having the highest average salary for employees who have been at Synthetix Solutions for less than 2 years
+	
+<p align="center">
+<img width="834" height="134" alt="image" src="https://github.com/user-attachments/assets/6e867149-0e2c-4391-a5f2-088e853ab001" />
+
+
 
 ### Problem 7: Who are the 5 highest paid employess from each department?
 
@@ -174,6 +193,16 @@ ORDER BY
 	salary
 ;
 ```
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns the top 5 highest paid employess from each department within Synthetix Solutions
+	
+<p align="center">
+<img width="726" height="838" alt="image" src="https://github.com/user-attachments/assets/08b97c5c-3ab1-40b1-8276-26be9429aa9d" />
+
+
 
 ### Problem 8: What percentage of employees salary make up each department total salary?
 
@@ -202,6 +231,17 @@ FROM
 INNER JOIN
 	hr_employee_info emp ON ds.department = emp.department
 ```
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns the top 5 highest paid employess from each department within Synthetix Solutions
+	
+<p align="center">
+<img width="726" height="838" alt="image" src="https://github.com/user-attachments/assets/08b97c5c-3ab1-40b1-8276-26be9429aa9d" />
+
+
+
 
 ### Problem 9: Which employees earn 10% more than the average salary of their job role?
 
