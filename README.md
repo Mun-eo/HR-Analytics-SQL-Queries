@@ -167,7 +167,7 @@ Returns the job role manager as the job role having the highest average salary f
 
 
 
-### Problem 7: Who are the 5 highest paid employess from each department?
+### Problem 6: Who are the 5 highest paid employess from each department?
 
 Identify the top 5 highest-paid employees within each Department based on Salary.
 
@@ -204,14 +204,14 @@ Returns the top 5 highest paid employess from each department within Synthetix S
 
 
 
-### Problem 8: What percentage of employees salary make up each department total salary?
+### Problem 7: What percentage of employees salary make up each department total salary?
 
-Calculate the Salary of all employees as a percentage of their Department's total Salary expenditure
+Calculate the Salary of all employees as a percentage of their Department's total Salary 
 
 **Query:**
 ```sql
 WITH department_total_salary AS (
-	SELECT 	-- This query finds the total salary of each department
+	SELECT 
 		department,
 		SUM(salary) AS total_salary
 	FROM
@@ -220,7 +220,7 @@ WITH department_total_salary AS (
 		department
 )
 
-SELECT	-- This query ranks employees as a percentage of their Department's total Salary expenditure.
+SELECT
 	emp.employeeid,
 	emp.department,
 	ds.total_salary,
@@ -235,15 +235,15 @@ INNER JOIN
 **Result:**
 
 <p align="center">
-Returns the top 5 highest paid employess from each department within Synthetix Solutions
+Returns the salary of the employees within Synthetix Solutions as a percentage of their departments total salary
 	
 <p align="center">
-<img width="726" height="838" alt="image" src="https://github.com/user-attachments/assets/08b97c5c-3ab1-40b1-8276-26be9429aa9d" />
+<img width="1320" height="838" alt="image" src="https://github.com/user-attachments/assets/02515aec-c3ab-4754-9dcb-1ab983ba937d" />
 
 
 
 
-### Problem 9: Which employees earn 10% more than the average salary of their job role?
+### Problem 8: Which employees earn 10% more than the average salary of their job role?
 
 Identify all employees whose Salary is in the top 10% of their specific Job_Role.
 
@@ -280,3 +280,13 @@ INNER JOIN
 WHERE 
 	sq.salary_quartile = 1 
 ```
+<p align="center">
+**Result:**
+
+<p align="center">
+Returns the employees who earn more than 10% of the average salary in their job role 
+	
+<p align="center">
+<img width="1170" height="838" alt="image" src="https://github.com/user-attachments/assets/0bc7b8d8-095a-407b-aff5-786886dd6ec9" />
+
+
